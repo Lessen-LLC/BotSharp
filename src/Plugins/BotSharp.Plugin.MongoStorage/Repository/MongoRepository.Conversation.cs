@@ -467,16 +467,6 @@ public partial class MongoRepository
             batchSize = batchLimit;
         }
 
-        if (bufferHours <= 0)
-        {
-            bufferHours = 12;
-        }
-
-        if (messageLimit <= 0)
-        {
-            messageLimit = 2;
-        }
-
         while (true)
         {
             var skip = (page - 1) * batchSize;

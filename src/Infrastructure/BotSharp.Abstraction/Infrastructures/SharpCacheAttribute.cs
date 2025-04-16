@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Rougamo;
 using Rougamo.Context;
+using System.Threading;
 
 namespace BotSharp.Core.Infrastructures;
 

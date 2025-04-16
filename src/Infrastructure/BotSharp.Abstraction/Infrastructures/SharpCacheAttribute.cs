@@ -80,7 +80,9 @@ public class SharpCacheAttribute : AsyncMoAttribute
 
         if (_perInstanceCache && context.Target != null)
         {
-            return $"{prefixKey}-{context.Target.GetHashCode()}_{argsKey}";
+            int threadId = Thread.CurrentThread.ManagedThreadId;
+            var instanceId = context.Target.GetHashCode();
+            return $"{prefixKey}-{threadId}_{instanceId}_{argsKey}";
         }
         else
         {
